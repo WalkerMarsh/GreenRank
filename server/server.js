@@ -18,13 +18,11 @@ app.set('view engine', 'ejs');
 
 
 app.use('/auth/google', authRouter);
-// app.use('/user',userRouter);
 app.use('/scores',scoreRouter);
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(path.resolve(__dirname, "../client")));
 
 app.get('/', (req,res)=>{
    res.status(200).sendFile(path.resolve(__dirname,'../client/index.html'))
@@ -38,6 +36,7 @@ app.get("/success", (req, res) => {
 
 
 app.use((req, res) => res.status(404).send('This is not the page you\'re looking for...'));
+
 
 
 
