@@ -33,7 +33,7 @@ class UserController {
   };
   
   getUserByGoogleId(req, res, next) {
-    UserModel.getUserByGoogleId(res.locals.googleUser.id)    //! get this from auth controller
+    UserModel.getUserByGoogleId(res.locals.googleUser.id)    
       .then((data) => {
         const user = data.rows[0];
         if (!user) {
@@ -50,7 +50,6 @@ class UserController {
       });
   };
 
-  //update user
 }
 
 const userController = new UserController();
